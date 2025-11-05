@@ -1,5 +1,5 @@
 {
-  "name": "project-template",
+  "name": "cv-application",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leetbeet/webpack-template.git"
+    "url": "git+https://github.com/leetbeet/cv-application.git"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "bugs": {
-  "url": "https://github.com/leetbeet/webpack-template/issues"
+    "url": "https://github.com/leetbeet/cv-application/issues"
   },
-  "homepage": "https://github.com/leetbeet/webpack-template#readme",
+  "homepage": "https://github.com/leetbeet/cv-application#readme",
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
