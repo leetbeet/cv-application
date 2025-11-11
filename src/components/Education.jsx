@@ -70,3 +70,18 @@ export default function Education({
     </form>
   );
 }
+
+function EducationButton({ degree, school, onEdit }) {
+  return (
+    <div
+      className="openFormBtn"
+      role="button"
+      aria-label="change education information"
+      tabIndex={0}
+      onClick={onEdit}
+    >
+      <h2>{school}</h2>
+      <h3>{degree}</h3>
+    </div>
+  );
+}
