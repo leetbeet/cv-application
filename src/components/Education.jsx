@@ -12,22 +12,6 @@ export default function Education({
   const [endDate, setEndDate] = useState(endDateInit);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleDegreeChange = (e) => {
-    setDegree(e.target.value);
-  };
-
-  const handleSchoolChange = (e) => {
-    setSchool(e.target.value);
-  };
-
-  const handleStartDateChange = (e) => {
-    setStartDate(e.target.value);
-  };
-
-  const handleEndDateChange = (e) => {
-    setEndDate(e.target.value);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
@@ -41,16 +25,24 @@ export default function Education({
       startDate={startDate}
       endDate={endDate}
       onEdit={() => setSubmitted(false)}
-    ></EducationButton>
+    />
   ) : (
     <form onSubmit={handleSubmit}>
       <label>
         Degree
-        <input type="text" value={degree} onChange={handleDegreeChange} />
+        <input
+          type="text"
+          value={degree}
+          onChange={(e) => setDegree(e.target.value)}
+        />
       </label>
       <label>
         School
-        <input type="text" value={school} onChange={handleSchoolChange} />
+        <input
+          type="text"
+          value={school}
+          onChange={(e) => setSchool(e.target.value)}
+        />
       </label>
       <div>
         <label>
@@ -58,12 +50,16 @@ export default function Education({
           <input
             type="text"
             value={startDate}
-            onChange={handleStartDateChange}
+            onChange={(e) => setStartDate(e.target.value)}
           />
         </label>
         <label>
           End date
-          <input type="text" value={endDate} onChange={handleEndDateChange} />
+          <input
+            type="text"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+          />
         </label>
       </div>
       <button type="submit">Save</button>
