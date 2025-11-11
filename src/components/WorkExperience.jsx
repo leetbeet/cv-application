@@ -21,7 +21,7 @@ export default function WorkExperience({
   };
 
   return submitted ? (
-    <ExperienceButton
+    <WorkExperienceButton
       jobTitle={jobTitle}
       company={company}
       startDate={startDate}
@@ -74,5 +74,20 @@ export default function WorkExperience({
       </label>
       <button type="submit">Save</button>
     </form>
+  );
+}
+
+function WorkExperienceButton({ jobTitle, company, onEdit }) {
+  return (
+    <div
+      className="openFormBtn"
+      role="button"
+      aria-label="change work experience information"
+      tabIndex={0}
+      onClick={onEdit}
+    >
+      <h2>{jobTitle}</h2>
+      <h3>{company}</h3>
+    </div>
   );
 }
