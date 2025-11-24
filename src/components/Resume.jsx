@@ -48,3 +48,25 @@ export function EducationEntry({ degree, school, startDate, endDate }) {
     </div>
   );
 }
+
+export function WorkEntry({
+  jobTitle,
+  company,
+  startDate,
+  endDate,
+  description,
+}) {
+  return (
+    <div className="work-entry">
+      <div className="work-dates">
+        {startDate} – {endDate}
+      </div>
+
+      <div className="work-main">
+        <h3>{company}</h3>
+        <h4>{jobTitle}</h4>
+        <p>{description}</p>
+      </div>
+    </div>
+  );
+}
