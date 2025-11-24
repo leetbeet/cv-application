@@ -34,3 +34,17 @@ export function Section({ title, children }) {
     </section>
   );
 }
+
+export function EducationEntry({ degree, school, startDate, endDate }) {
+  return (
+    <div className="edu-entry">
+      <div className="edu-dates">
+        {startDate} – {endDate}
+      </div>
+      <div className="edu-main">
+        <h3>{school}</h3>
+        <p>{degree}</p>
+      </div>
+    </div>
+  );
+}
