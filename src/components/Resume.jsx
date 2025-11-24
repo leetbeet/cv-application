@@ -25,3 +25,12 @@ export default function Resume({ general, education, work }) {
     </div>
   );
 }
+
+export function Section({ title, children }) {
+  return (
+    <section className="resume-section">
+      <h2>{title}</h2>
+      <div>{children}</div>
+    </section>
+  );
+}
