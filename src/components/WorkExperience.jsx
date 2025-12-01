@@ -6,6 +6,7 @@ export default function WorkExperience({
   startDateInit = '',
   endDateInit = '',
   descriptionInit = '',
+  onSubmit,
 }) {
   const [jobTitle, setJobTitle] = useState(jobTitleInit);
   const [company, setCompany] = useState(companyInit);
@@ -17,7 +18,7 @@ export default function WorkExperience({
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    // code to send data to resume
+    onSubmit({ jobTitle, company, startDate, endDate, description });
   };
 
   return submitted ? (

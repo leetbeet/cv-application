@@ -5,6 +5,7 @@ export default function Education({
   schoolInit = '',
   startDateInit = '',
   endDateInit = '',
+  onSubmit,
 }) {
   const [degree, setDegree] = useState(degreeInit);
   const [school, setSchool] = useState(schoolInit);
@@ -15,7 +16,7 @@ export default function Education({
   const handleSubmit = (e) => {
     e.preventDefault();
     setSubmitted(true);
-    // code to send data to resume
+    onSubmit({ degree, school, startDate, endDate });
   };
 
   return submitted ? (

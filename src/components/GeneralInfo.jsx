@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function GeneralInfo() {
+export default function GeneralInfo(onSubmit) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNum, setPhoneNum] = useState('');
@@ -19,7 +19,7 @@ export default function GeneralInfo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // code to send data to resume
+    onSubmit({ name, email, phoneNum });
   };
 
   return (
