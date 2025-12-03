@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function GeneralInfo(onSubmit) {
+export default function GeneralInfo({ onSubmit }) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNum, setPhoneNum] = useState('');
