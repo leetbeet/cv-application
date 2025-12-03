@@ -23,26 +23,26 @@ export default function App() {
   const handleWorkSubmit = (entry) => setWork((prev) => [...prev, entry]);
 
   return (
-    <div className="app">
-      <DropDown
-        FormComponent={<GeneralInfo onSubmit={handleGeneralSubmit} />}
-        formClass="general-form"
-        formName="General Information"
-      />
-
-      <DropDown
-        FormComponent={<Education onSubmit={handleEducationSubmit} />}
-        formClass="education-form"
-        formName="Education"
-      />
-
-      <DropDown
-        FormComponent={<WorkExperience onSubmit={handleWorkSubmit} />}
-        formClass="work-form"
-        formName="Work Experience"
-      />
+    <>
+      <div className="form">
+        <DropDown
+          FormComponent={<GeneralInfo onSubmit={handleGeneralSubmit} />}
+          formClass="general-form"
+          formName="General Information"
+        />
+        <DropDown
+          FormComponent={<Education onSubmit={handleEducationSubmit} />}
+          formClass="education-form"
+          formName="Education"
+        />
+        <DropDown
+          FormComponent={<WorkExperience onSubmit={handleWorkSubmit} />}
+          formClass="work-form"
+          formName="Work Experience"
+        />
+      </div>
 
       <Resume general={general} education={education} work={work} />
-    </div>
+    </>
   );
 }
