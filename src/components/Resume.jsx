@@ -1,3 +1,5 @@
+import '../styles/resume.css';
+
 export default function Resume({ general, education, work }) {
   const { name, email, phoneNum } = general;
 
