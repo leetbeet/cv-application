@@ -1,18 +1,94 @@
 .resume {
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .resume-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
   background-color: #0d2a4c;
   color: white;
-  padding: 24px;
+  padding: 32px;
+  text-align: center;
+}
+
+.resume-header h1 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
 }
 
 .contact {
   display: flex;
-  gap: 12px;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+/* Sections */
+.resume-section {
+  padding: 24px 32px;
+}
+
+.resume-section h2 {
+  background-color: #eef2f5;
+  padding: 8px 12px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #0d2a4c;
+}
+
+.edu-entry {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.edu-dates {
+  min-width: 160px;
+  font-size: 14px;
+  color: #333;
+}
+
+.edu-main h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.edu-main p {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+.work-entry {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.work-dates {
+  min-width: 160px;
+  font-size: 14px;
+  color: #333;
+}
+
+.work-main h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.work-main h4 {
+  margin: 4px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.work-main p {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.5;
 }

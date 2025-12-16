@@ -7,10 +7,18 @@
 #root {
   display: flex;
   justify-content: center;
-  gap: 128px;
+  gap: 32px;
   margin: 16px 128px;
 }
 
 body {
   font-family: 'Roboto', sans-serif;
+}
+
+.resume {
+  width: 45vw;
+}
+
+.form {
+  width: 45vw;
 }
