@@ -49,6 +49,7 @@ export default function App() {
               General Information
             </>
           }
+          ariaLabel="general information dropdown"
         />
 
         <DropDown
@@ -74,6 +75,7 @@ export default function App() {
               Education
             </>
           }
+          ariaLabel="education dropdown"
         />
 
         <DropDown
@@ -99,6 +101,7 @@ export default function App() {
               Work Experience
             </>
           }
+          ariaLabel="work experience dropdown"
         />
       </div>
 
