@@ -35,7 +35,20 @@ export default function App() {
         <DropDown
           FormComponent={<GeneralInfo onSubmit={handleGeneralSubmit} />}
           formClass="general-form"
-          formName="General Information"
+          formName={
+            <>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <title>account</title>
+                <path d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z" />
+              </svg>
+              General Information
+            </>
+          }
         />
 
         <DropDown
@@ -47,7 +60,20 @@ export default function App() {
             />
           }
           formClass="education-form"
-          formName="Education"
+          formName={
+            <>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <title>school</title>
+                <path d="M12,3L1,9L12,15L21,10.09V17H23V9M5,13.18V17.18L12,21L19,17.18V13.18L12,17L5,13.18Z" />
+              </svg>
+              Education
+            </>
+          }
         />
 
         <DropDown
@@ -59,7 +85,20 @@ export default function App() {
             />
           }
           formClass="work-form"
-          formName="Work Experience"
+          formName={
+            <>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="24"
+                height="24"
+              >
+                <title>briefcase</title>
+                <path d="M10,2H14A2,2 0 0,1 16,4V6H20A2,2 0 0,1 22,8V19A2,2 0 0,1 20,21H4C2.89,21 2,20.1 2,19V8C2,6.89 2.89,6 4,6H8V4C8,2.89 8.89,2 10,2M14,6V4H10V6H14Z" />
+              </svg>
+              Work Experience
+            </>
+          }
         />
       </div>
 
