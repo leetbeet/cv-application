@@ -20,6 +20,7 @@ export default function GeneralInfo({ onSubmit }) {
           onChange={(e) => setName(e.target.value)}
           placeholder="Enter your full name"
           aria-label="full name"
+          required
         />
       </label>
 
@@ -31,6 +32,7 @@ export default function GeneralInfo({ onSubmit }) {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter email"
           aria-label="email address"
+          required
         />
       </label>
 
@@ -42,6 +44,7 @@ export default function GeneralInfo({ onSubmit }) {
           onChange={(e) => setPhoneNum(e.target.value)}
           placeholder="Enter phone number"
           aria-label="phone number"
+          required
         />
       </label>
 

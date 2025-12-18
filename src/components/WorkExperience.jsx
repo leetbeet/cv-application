@@ -85,6 +85,7 @@ export default function WorkExperience({
             value={jobTitle}
             onChange={(e) => setJobTitle(e.target.value)}
             placeholder="Enter Job Title"
+            required
           />
         </label>
         <label>
@@ -94,6 +95,7 @@ export default function WorkExperience({
             value={company}
             onChange={(e) => setCompany(e.target.value)}
             placeholder="Enter Company"
+            required
           />
         </label>
         <div>
@@ -104,6 +106,7 @@ export default function WorkExperience({
               value={startDate}
               onChange={(e) => setStartDate(e.target.value)}
               placeholder="dd/mm/yyyy"
+              required
             />
           </label>
           <label style={{ flex: 1 }}>
@@ -113,6 +116,7 @@ export default function WorkExperience({
               value={endDate}
               onChange={(e) => setEndDate(e.target.value)}
               placeholder="dd/mm/yyyy"
+              required
             />
           </label>
         </div>
@@ -122,6 +126,7 @@ export default function WorkExperience({
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             placeholder="Main tasks"
+            required
           />
         </label>
         <button type="submit">

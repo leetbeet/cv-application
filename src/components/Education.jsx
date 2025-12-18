@@ -80,6 +80,7 @@ export default function Education({
             value={degree}
             onChange={(e) => setDegree(e.target.value)}
             placeholder="Enter Degree / Field of Study"
+            required
           />
         </label>
         <label>
@@ -89,6 +90,7 @@ export default function Education({
             value={school}
             onChange={(e) => setSchool(e.target.value)}
             placeholder="Enter school / university"
+            required
           />
         </label>
         <div>
@@ -99,6 +101,7 @@ export default function Education({
               value={startDate}
               onChange={(e) => setStartDate(e.target.value)}
               placeholder="dd/mm/yyyy"
+              required
             />
           </label>
           <label style={{ flex: 1 }}>
@@ -108,6 +111,7 @@ export default function Education({
               value={endDate}
               onChange={(e) => setEndDate(e.target.value)}
               placeholder="dd/mm/yyyy"
+              required
             />
           </label>
         </div>
