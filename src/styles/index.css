@@ -16,6 +16,9 @@ body {
   display: flex;
   justify-content: center;
   font-family: 'Roboto', sans-serif;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .form {
