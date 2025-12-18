@@ -1,0 +1,115 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin: 40px auto;
+}
+
+.general-form,
+.education-form,
+.work-form {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 12px 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.general-form > h2,
+.education-form > h2,
+.work-form > h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 12px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  background: #f1f3f5;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14px;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+  min-height: 90px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #888;
+}
+
+form > div {
+  display: flex;
+  gap: 16px;
+}
+
+button {
+  align-self: flex-end;
+  background: #005baf;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(90%);
+}
+
+.openFormBtn {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.openFormBtn:hover {
+  background: #f7f7f7;
+  transform: translateY(-2px);
+}
+
+.openFormBtn h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.openFormBtn h3 {
+  margin-top: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  form > div {
+    flex-direction: column;
+  }
+}

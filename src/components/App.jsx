@@ -4,6 +4,7 @@ import GeneralInfo from './GeneralInfo';
 import WorkExperience from './WorkExperience';
 import Education from './Education';
 import Resume from './Resume';
+import '../styles/form.css';
 
 export default function App() {
   const [general, setGeneral] = useState({
