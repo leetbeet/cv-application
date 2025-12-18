@@ -87,6 +87,14 @@
   line-height: 1.5;
 }
 
+svg {
+  height: 28px;
+  width: 28px;
+  fill: white;
+  vertical-align: middle;
+  padding-right: 4px;
+}
+
 @media (max-width: 400px) {
   .contact {
     flex-direction: column;
