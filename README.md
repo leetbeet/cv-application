@@ -22,4 +22,4 @@ A browser-based CV application built with **React** for creating and previewing 
 
 ## Live Demo
 
-_to be updated_
+https://cv-application-leetbeet.vercel.app/
