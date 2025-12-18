@@ -21,7 +21,13 @@ export default function App() {
   const handleEducationSubmit = (entry) =>
     setEducation((prev) => [...prev, entry]);
 
+  const updateEducation = (index, newEntry) =>
+    setEducation((prev) => prev.map((e, i) => (i === index ? newEntry : e)));
+
   const handleWorkSubmit = (entry) => setWork((prev) => [...prev, entry]);
+
+  const updateWork = (index, newEntry) =>
+    setWork((prev) => prev.map((w, i) => (i === index ? newEntry : w)));
 
   return (
     <>
@@ -31,13 +37,27 @@ export default function App() {
           formClass="general-form"
           formName="General Information"
         />
+
         <DropDown
-          FormComponent={<Education onSubmit={handleEducationSubmit} />}
+          FormComponent={
+            <Education
+              entries={education}
+              onSubmit={handleEducationSubmit}
+              onUpdate={updateEducation}
+            />
+          }
           formClass="education-form"
           formName="Education"
         />
+
         <DropDown
-          FormComponent={<WorkExperience onSubmit={handleWorkSubmit} />}
+          FormComponent={
+            <WorkExperience
+              entries={work}
+              onSubmit={handleWorkSubmit}
+              onUpdate={updateWork}
+            />
+          }
           formClass="work-form"
           formName="Work Experience"
         />

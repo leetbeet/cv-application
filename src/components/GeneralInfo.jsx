@@ -5,18 +5,6 @@ export default function GeneralInfo({ onSubmit }) {
   const [email, setEmail] = useState('');
   const [phoneNum, setPhoneNum] = useState('');
 
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePhoneNumChange = (e) => {
-    setPhoneNum(e.target.value);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({ name, email, phoneNum });
@@ -26,17 +14,38 @@ export default function GeneralInfo({ onSubmit }) {
     <form onSubmit={handleSubmit}>
       <label>
         Full name
-        <input type="text" value={name} onChange={handleNameChange} />
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Enter your full name"
+          aria-label="full name"
+        />
       </label>
+
       <label>
         Email
-        <input type="text" value={email} onChange={handleEmailChange} />
+        <input
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter email"
+          aria-label="email address"
+        />
       </label>
+
       <label>
         Phone number
-        <input type="text" value={phoneNum} onChange={handlePhoneNumChange} />
+        <input
+          type="tel"
+          value={phoneNum}
+          onChange={(e) => setPhoneNum(e.target.value)}
+          placeholder="Enter phone number"
+          aria-label="phone number"
+        />
       </label>
-      <button type="submit">Submit</button>
+
+      <button type="submit">Save</button>
     </form>
   );
 }

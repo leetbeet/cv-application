@@ -1,84 +1,120 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Education({
+  entries = [],
+  onSubmit,
+  onUpdate,
   degreeInit = '',
   schoolInit = '',
   startDateInit = '',
   endDateInit = '',
-  onSubmit,
 }) {
   const [degree, setDegree] = useState(degreeInit);
   const [school, setSchool] = useState(schoolInit);
   const [startDate, setStartDate] = useState(startDateInit);
   const [endDate, setEndDate] = useState(endDateInit);
-  const [submitted, setSubmitted] = useState(false);
+  const [editingIndex, setEditingIndex] = useState(null);
+
+  useEffect(() => {
+    if (editingIndex === null) {
+      setDegree('');
+      setSchool('');
+      setStartDate('');
+      setEndDate('');
+    } else {
+      const e = entries[editingIndex] || {};
+      setDegree(e.degree || '');
+      setSchool(e.school || '');
+      setStartDate(e.startDate || '');
+      setEndDate(e.endDate || '');
+    }
+  }, [editingIndex, entries]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    onSubmit({ degree, school, startDate, endDate });
+    const payload = { degree, school, startDate, endDate };
+    if (editingIndex === null) {
+      onSubmit(payload);
+    } else {
+      onUpdate(editingIndex, payload);
+    }
+    setEditingIndex(null);
+    setDegree('');
+    setSchool('');
+    setStartDate('');
+    setEndDate('');
   };
 
-  return submitted ? (
-    <EducationButton
-      degree={degree}
-      school={school}
-      startDate={startDate}
-      endDate={endDate}
-      onEdit={() => setSubmitted(false)}
-    />
-  ) : (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Degree
-        <input
-          type="text"
-          value={degree}
-          onChange={(e) => setDegree(e.target.value)}
-        />
-      </label>
-      <label>
-        School
-        <input
-          type="text"
-          value={school}
-          onChange={(e) => setSchool(e.target.value)}
-        />
-      </label>
-      <div>
-        <label>
-          Start date
-          <input
-            type="text"
-            value={startDate}
-            onChange={(e) => setStartDate(e.target.value)}
-          />
-        </label>
-        <label>
-          End date
-          <input
-            type="text"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
-          />
-        </label>
-      </div>
-      <button type="submit">Save</button>
-    </form>
-  );
-}
+  const handleEditClick = (idx) => {
+    setEditingIndex(idx);
+  };
 
-function EducationButton({ degree, school, onEdit }) {
   return (
-    <div
-      className="openFormBtn"
-      role="button"
-      aria-label="change education information"
-      tabIndex={0}
-      onClick={onEdit}
-    >
-      <h2>{school}</h2>
-      <h3>{degree}</h3>
-    </div>
+    <>
+      <div
+        className="entries-list"
+        style={{ display: entries.length ? 'block' : 'none', marginBottom: 12 }}
+      >
+        {entries.map((entry, i) => (
+          <div
+            key={i}
+            className="openFormBtn"
+            role="button"
+            aria-label={`edit education ${i}`}
+            tabIndex={0}
+            onClick={() => handleEditClick(i)}
+            onKeyDown={(ev) => ev.key === 'Enter' && handleEditClick(i)}
+            style={{ marginBottom: 10 }}
+          >
+            <h2>{entry.school}</h2>
+            <h3>{entry.degree}</h3>
+          </div>
+        ))}
+      </div>
+
+      <form onSubmit={handleSubmit}>
+        <label>
+          Degree
+          <input
+            type="text"
+            value={degree}
+            onChange={(e) => setDegree(e.target.value)}
+            placeholder="Enter Degree / Field of Study"
+          />
+        </label>
+        <label>
+          School
+          <input
+            type="text"
+            value={school}
+            onChange={(e) => setSchool(e.target.value)}
+            placeholder="Enter school / university"
+          />
+        </label>
+        <div>
+          <label style={{ flex: 1 }}>
+            Start date
+            <input
+              type="text"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+              placeholder="dd/mm/yyyy"
+            />
+          </label>
+          <label style={{ flex: 1 }}>
+            End date
+            <input
+              type="text"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+              placeholder="dd/mm/yyyy"
+            />
+          </label>
+        </div>
+        <button type="submit">
+          {editingIndex === null ? 'Save' : 'Update'}
+        </button>
+      </form>
+    </>
   );
 }
